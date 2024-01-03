@@ -3,17 +3,11 @@ using UnityEngine;
 public class UnitClick : MonoBehaviour
 {
 
-    private Camera cam;
+    public Camera cam;
     public GameObject groundMarker;
 
     public LayerMask clickable;
     public LayerMask ground;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        cam = Camera.main;
-    }
 
     // Update is called once per frame
     void Update()

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UnitDrag : MonoBehaviour
 {
-    Camera cam;
+    public Camera cam;
 
     [SerializeField] RectTransform boxVisual;
 
@@ -14,7 +14,6 @@ public class UnitDrag : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main;
         startPosition = Vector2.zero;
         endPosition = Vector2.zero;
         // "redraws" the box with zero everything, so has it disappear

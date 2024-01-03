@@ -8,8 +8,6 @@ public class UnitMovement : MonoBehaviour
     NavMeshAgent agent;
     public LayerMask ground;
 
-    public LayerMask regionLayer;
-
     // Start is called before the first frame update
     void Start()
     {
