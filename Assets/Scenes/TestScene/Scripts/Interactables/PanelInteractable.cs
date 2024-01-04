@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
 public class PanelInteractable : Interactable
 {
     protected PanelManager panelManager;
@@ -9,3 +10,4 @@ public class PanelInteractable : Interactable
         panelManager = PanelManager.Instance;
     }
 }
+*/

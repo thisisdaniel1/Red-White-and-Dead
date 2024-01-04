@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/*
 public class PanelManager : MonoBehaviour
 {
     [SerializeField]
@@ -68,18 +69,6 @@ public class PanelManager : MonoBehaviour
             return;
         }
     }
-
-    /*
-    // legacy function for enabling a panel
-    public void EnterPanel(string panelTextStr, string panelButtonTextStr){
-        isPlaying = true;
-        playerController.FreezePlayer();
-        playerController.UnFreezeCursor();
-        panelText.text = panelTextStr;
-        panelButtonText.text = panelButtonTextStr;
-        audioManager.Play();
-    }
-    */
 
     public void EnterNumPad(){
         isPlaying = true;
@@ -163,3 +152,4 @@ public class PanelManager : MonoBehaviour
         numPad.SetActive(false);
     }
 }
+*/

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
 public class TestPanel : PanelInteractable
 {
     [SerializeField]
@@ -26,3 +27,4 @@ public class TestPanel : PanelInteractable
         }
     }
 }
+*/
