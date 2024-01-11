@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-/*
 public class PanelManager : MonoBehaviour
 {
     [SerializeField]
@@ -152,4 +151,3 @@ public class PanelManager : MonoBehaviour
         numPad.SetActive(false);
     }
 }
-*/

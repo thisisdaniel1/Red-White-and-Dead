@@ -1,6 +1,5 @@
 using UnityEngine;
 
-/*
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5.5f;  // Movement speed
@@ -89,4 +88,3 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = true;
     }
 }
-*/
