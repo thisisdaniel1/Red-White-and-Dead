@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5.5f;  // Movement speed
+    public float sprintSpeed = 8f;
     public float rotationSpeed = 3.0f;  // Camera rotation speed
 
     private CharacterController characterController;
@@ -13,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     private bool canMove;
     private bool canRotate;
+
+    private bool sprinting;
 
     public static PlayerController Instance;
 
@@ -34,13 +37,20 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+
+        sprinting = Input.GetButton("Sprint");
+
         if(canMove){
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
 
             Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
             moveDirection = transform.TransformDirection(moveDirection);
+
             moveDirection *= moveSpeed;
+            if (sprinting){
+                moveDirection *= sprintSpeed;
+            }
 
             // calculate the downward force and apply it to player
             verticalSpeed += gravity * Time.deltaTime;
