@@ -16,6 +16,24 @@ public class CharacterRigController : MonoBehaviour {
 			SetArsenal (arsenal[0].name);
 		}
 
+	void Update(){
+		if (Input.GetKeyDown("1")){
+			SetArsenal("Empty");
+		}
+		if (Input.GetKeyDown("2")){
+			SetArsenal("One Pistol");
+		}
+		if (Input.GetKeyDown("3")){
+			SetArsenal("Two Pistols");
+		}
+		if (Input.GetKeyDown("4")){
+			SetArsenal("Sniper Rifle");
+		}
+		if (Input.GetKeyDown("5")){
+			SetArsenal("Musket");
+		}
+	}
+
 	public void SetArsenal(string name) {
 		foreach (Arsenal hand in arsenal) {
 			if (hand.name == name) {
@@ -37,7 +55,7 @@ public class CharacterRigController : MonoBehaviour {
 				}
 				animator.runtimeAnimatorController = hand.controller;
 				return;
-				}
+			}
 		}
 	}
 

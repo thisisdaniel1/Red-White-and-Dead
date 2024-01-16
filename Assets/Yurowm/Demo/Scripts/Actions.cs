@@ -15,12 +15,25 @@ public class Actions : MonoBehaviour {
 
 	void Update(){
 		if (Input.GetKeyDown("e")){
-			Debug.Log("aiming");
 			Aiming();
 		}
-		if (Input.GetKeyDown("r")){
-			Debug.Log("attacking");
+		else if (Input.GetKeyDown("r")){
 			Attack();
+		}
+			
+		else if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d")){
+			
+			if (Input.GetKey("left shift")){
+				Run();
+			}
+			else{
+				Walk();
+			}
+			
+		}
+
+		if (Input.GetKeyUp("w") || Input.GetKeyUp("a") || Input.GetKeyUp("s") || Input.GetKeyUp("d")){
+			Stay();
 		}
 	}
 
