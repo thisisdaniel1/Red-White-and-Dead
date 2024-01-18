@@ -6,7 +6,8 @@ public class PlayerArms : MonoBehaviour
 {
     public int damage;
 
-    public Camera camera;
+    [SerializeField]
+    private Camera camera;
 
     public float fireRate;
 

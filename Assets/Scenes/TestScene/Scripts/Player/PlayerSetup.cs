@@ -8,15 +8,12 @@ public class PlayerSetup : MonoBehaviour
 
     public Actions actions;
 
-    public Animator animator;
-
     public GameObject cam;
 
     public void IsLocalPlayer(){
         playerController.enabled = true;
-        characterRigController.enabled = true;
+        //characterRigController.enabled = true;
         actions.enabled = true;
-        animator.enabled = true;
         cam.SetActive(true);
     }
 }

@@ -1,16 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Photon.Pun;
 
 [RequireComponent (typeof (Animator))]
-public class Actions : MonoBehaviour {
+public class Actions : MonoBehaviourPun {
 
 	private Animator animator;
+
+	private CharacterRigController characterRigController;
 
 	const int countOfDamageAnimations = 3;
 	int lastDamageAnimation = -1;
 
 	void Awake () {
 		animator = GetComponent<Animator> ();
+		characterRigController = GetComponent<CharacterRigController>();
 	}
 
 	void Update(){
@@ -35,21 +39,34 @@ public class Actions : MonoBehaviour {
 		if (Input.GetKeyUp("w") || Input.GetKeyUp("a") || Input.GetKeyUp("s") || Input.GetKeyUp("d")){
 			Stay();
 		}
+
+		if (Input.GetKeyDown("1")){
+			characterRigController.SetArsenal("Empty");
+		}
+		if (Input.GetKeyDown("2")){
+			characterRigController.SetArsenal("One Pistol");
+		}
+		if (Input.GetKeyDown("3")){
+			characterRigController.SetArsenal("Two Pistols");
+		}
+		if (Input.GetKeyDown("4")){
+			characterRigController.SetArsenal("Sniper Rifle");
+		}
+		if (Input.GetKeyDown("5")){
+			characterRigController.SetArsenal("Musket");
+		}
 	}
 
 	public void Stay () {
-		animator.SetBool("Aiming", false);
-		animator.SetFloat ("Speed", 0f);
-		}
+		SetRemoteAnimationParameters(false, 0f);
+	}
 
 	public void Walk () {
-		animator.SetBool("Aiming", false);
-		animator.SetFloat ("Speed", 0.5f);
+		SetRemoteAnimationParameters(false, 0.5f);
 	}
 
 	public void Run () {
-		animator.SetBool("Aiming", false);
-		animator.SetFloat ("Speed", 1f);
+		SetRemoteAnimationParameters(false, 1f);
 	}
 
 	public void Attack () {
@@ -91,5 +108,15 @@ public class Actions : MonoBehaviour {
 	public void Sitting () {
 		animator.SetBool ("Squat", !animator.GetBool("Squat"));
 		animator.SetBool("Aiming", false);
+	}
+
+	[PunRPC]
+	void SetAnimationParameters(bool aiming, float speed){
+		animator.SetBool("Aiming", aiming);
+		animator.SetFloat("Speed", speed);
+	}
+
+	void SetRemoteAnimationParameters(bool aiming, float speed){
+		photonView.RPC("SetAnimationParameters", RpcTarget.All, aiming, speed);
 	}
 }
