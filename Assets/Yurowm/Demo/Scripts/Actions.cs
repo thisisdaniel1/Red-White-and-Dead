@@ -53,7 +53,7 @@ public class Actions : MonoBehaviourPun {
 			characterRigController.SetArsenal("Sniper Rifle");
 		}
 		if (Input.GetKeyDown("5")){
-			characterRigController.SetArsenal("Musket");
+			characterRigController.SetArsenal("Brown Bess");
 		}
 	}
 

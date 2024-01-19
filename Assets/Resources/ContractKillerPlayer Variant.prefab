@@ -793,16 +793,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: arsenal.Array.data[4].name
-      value: Musket
+      value: Brown Bess
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: arsenal.Array.data[4].rightGun
       value: 
-      objectReference: {fileID: 100000, guid: 5928b07c18727fe47acb7df646f608ef, type: 3}
+      objectReference: {fileID: 1345244438011766804, guid: 7d710a25c145fbb41ba66225421b8078, type: 3}
     - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: arsenal.Array.data[4].controller
       value: 
-      objectReference: {fileID: 9100000, guid: dffbd9326394a8d47a87a1e2aec70a59, type: 2}
+      objectReference: {fileID: 9100000, guid: 2cd8541446f636b46b075d68e66f639b, type: 2}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[1].LGLocalRotation.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[1].RGLocalRotation.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[2].LGLocalRotation.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[2].RGLocalRotation.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[3].LGLocalRotation.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[3].RGLocalRotation.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[4].RGLocalPosition.x
+      value: -4.195
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[4].RGLocalPosition.y
+      value: -0.084
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[4].RGLocalPosition.z
+      value: -0.805
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[4].RGLocalRotation.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[4].RGLocalRotation.z
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: m_Enabled
       value: 0

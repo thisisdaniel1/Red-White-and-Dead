@@ -22,27 +22,6 @@ public class CharacterRigController : MonoBehaviourPun {
 			SetArsenal (arsenal[0].name);
 		}
 
-	void Update(){
-
-		/*
-		if (Input.GetKeyDown("1")){
-			SetArsenal("Empty");
-		}
-		if (Input.GetKeyDown("2")){
-			SetArsenal("One Pistol");
-		}
-		if (Input.GetKeyDown("3")){
-			SetArsenal("Two Pistols");
-		}
-		if (Input.GetKeyDown("4")){
-			SetArsenal("Sniper Rifle");
-		}
-		if (Input.GetKeyDown("5")){
-			SetArsenal("Musket");
-		}
-		*/
-	}
-
 	[PunRPC]
     private void ChangeAnimatorController(int controllerIndex)
     {
@@ -74,22 +53,43 @@ public class CharacterRigController : MonoBehaviourPun {
 	{
 		Arsenal hand = arsenal[weaponIndex];
 
+		// Destroy any weapons if any
+		if (rightGunBone.childCount > 0)
+		{
+			Destroy(rightGunBone.GetChild(0).gameObject);
+		}
+		if (leftGunBone.childCount > 0)
+		{
+			Destroy(leftGunBone.GetChild(0).gameObject);
+		}
+
+
 		// Instantiate and set up right hand
 		if (hand.rightGun != null)
 		{
+			// Debug.Log("swapping right");
 			GameObject newRightGun = (GameObject)Instantiate(hand.rightGun);
 			newRightGun.transform.parent = rightGunBone;
+			newRightGun.transform.localPosition = hand.RGLocalPosition;
+			newRightGun.transform.localRotation = Quaternion.Euler(hand.RGLocalRotation);
+			/*
 			newRightGun.transform.localPosition = Vector3.zero;
 			newRightGun.transform.localRotation = Quaternion.Euler(90, 0, 0);
+			*/
 		}
 
 		// Instantiate and set up left hand
 		if (hand.leftGun != null)
 		{
+			// Debug.Log("swapping left");
 			GameObject newLeftGun = (GameObject)Instantiate(hand.leftGun);
 			newLeftGun.transform.parent = leftGunBone;
+			newLeftGun.transform.localPosition = hand.LGLocalPosition;
+			newLeftGun.transform.localRotation = Quaternion.Euler(hand.LGLocalRotation);
+			/*
 			newLeftGun.transform.localPosition = Vector3.zero;
 			newLeftGun.transform.localRotation = Quaternion.Euler(90, 0, 0);
+			*/
 		}
 	}
 
@@ -112,7 +112,7 @@ public class CharacterRigController : MonoBehaviourPun {
 				}
 
 				// Instantiate and set up weapons
-				InstantiateWeapon(i);
+				// InstantiateWeapon(i);
 
 				// Set animator controller
 				animator.runtimeAnimatorController = hand.controller;
@@ -135,5 +135,13 @@ public class CharacterRigController : MonoBehaviourPun {
 		public GameObject rightGun;
 		public GameObject leftGun;
 		public RuntimeAnimatorController controller;
+
+		public Vector3 RGLocalPosition;
+		public Vector3 RGLocalRotation;
+		//public Vector3 rightGunLocalScale;
+
+		public Vector3 LGLocalPosition;
+		public Vector3 LGLocalRotation;
+		//public Vector3 leftGunLocalScale;
 	}
 }
