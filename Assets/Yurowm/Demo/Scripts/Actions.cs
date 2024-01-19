@@ -55,6 +55,9 @@ public class Actions : MonoBehaviourPun {
 		if (Input.GetKeyDown("5")){
 			characterRigController.SetArsenal("Brown Bess");
 		}
+		if (Input.GetKeyDown("6")){
+			characterRigController.SetArsenal("PPK");
+		}
 	}
 
 	public void Stay () {

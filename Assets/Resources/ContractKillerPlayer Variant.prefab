@@ -780,6 +780,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 8bbca7fa0e7d6cf45b625c38120c55a4, type: 2}
     - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 2806717797008687246}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -789,20 +793,136 @@ PrefabInstance:
       objectReference: {fileID: 3203342920702203564}
     - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: arsenal.Array.size
-      value: 5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: cameraPos.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: arsenal.Array.data[4].name
       value: Brown Bess
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[5].name
+      value: PPK
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: cameraPos.Array.data[0].name
+      value: pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: cameraPos.Array.data[1].name
+      value: dual pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: cameraPos.Array.data[2].name
+      value: rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: arsenal.Array.data[4].rightGun
       value: 
       objectReference: {fileID: 1345244438011766804, guid: 7d710a25c145fbb41ba66225421b8078, type: 3}
     - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[5].rightGun
+      value: 
+      objectReference: {fileID: 4390121490001340495, guid: d49921157055c5e4587293efe15c8983, type: 3}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[0].weaponType
+      value: dual pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[1].weaponType
+      value: pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[2].weaponType
+      value: dual pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[3].weaponType
+      value: rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: arsenal.Array.data[4].controller
       value: 
       objectReference: {fileID: 9100000, guid: 2cd8541446f636b46b075d68e66f639b, type: 2}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[4].weaponType
+      value: rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[5].controller
+      value: 
+      objectReference: {fileID: 9100000, guid: db9637b9a5214f244a3ebaf0cd60acb4, type: 2}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[5].weaponType
+      value: pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: cameraPos.Array.data[0].position.x
+      value: -0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: cameraPos.Array.data[0].position.y
+      value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: cameraPos.Array.data[0].position.z
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: cameraPos.Array.data[1].position.x
+      value: -0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: cameraPos.Array.data[1].position.y
+      value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: cameraPos.Array.data[1].position.z
+      value: 0.088
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: cameraPos.Array.data[2].position.x
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: cameraPos.Array.data[2].position.y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: cameraPos.Array.data[2].position.z
+      value: 0.129
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[0].cameraPosIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[1].cameraPosIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[2].cameraPosIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[3].cameraPosIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[4].cameraPosIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[5].cameraPosIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: predefinedCameraPositions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: arsenal.Array.data[1].LGLocalRotation.x
       value: 90
@@ -847,6 +967,70 @@ PrefabInstance:
       propertyPath: arsenal.Array.data[4].RGLocalRotation.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[5].RGLocalPosition.x
+      value: -0.009
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[5].RGLocalPosition.y
+      value: -0.036
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[5].RGLocalPosition.z
+      value: 0.014
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[5].RGLocalRotation.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[5].RGLocalRotation.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[5].RGLocalRotation.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: predefinedCameraPositions.Array.data[0].x
+      value: -0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: predefinedCameraPositions.Array.data[0].y
+      value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: predefinedCameraPositions.Array.data[0].z
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: predefinedCameraPositions.Array.data[1].x
+      value: -0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: predefinedCameraPositions.Array.data[1].y
+      value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: predefinedCameraPositions.Array.data[1].z
+      value: 0.088
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: predefinedCameraPositions.Array.data[2].x
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: predefinedCameraPositions.Array.data[2].y
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: predefinedCameraPositions.Array.data[2].z
+      value: 0.129
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      propertyPath: arsenal.Array.data[5].cameraPos.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -857,15 +1041,15 @@ PrefabInstance:
       objectReference: {fileID: 3203342920702203564}
     - target: {fileID: 1986261081495651190, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.08
+      value: -0.006
       objectReference: {fileID: 0}
     - target: {fileID: 1986261081495651190, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.87
+      value: 0.83
       objectReference: {fileID: 0}
     - target: {fileID: 1986261081495651190, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.01
+      value: 0.09
       objectReference: {fileID: 0}
     - target: {fileID: 2328718536730069885, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: m_Enabled
@@ -917,11 +1101,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6980983798655893633, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: field of view
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 6980983798655893633, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       propertyPath: near clip plane
-      value: 0.14
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -945,6 +1129,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100096, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7836816518971089048}
+    - targetCorrespondingSourceObject: {fileID: 100096, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5336387278114137788}
   m_SourcePrefab: {fileID: 100100000, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
 --- !u!114 &760007605915056405 stripped
 MonoBehaviour:
@@ -960,6 +1147,11 @@ MonoBehaviour:
 --- !u!1 &1140823250789442430 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5316250337103029105, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
+  m_PrefabInstance: {fileID: 5049125826568388623}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &2806717797008687246 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6980983798655893633, guid: 3e44f86169ecf5f41926bb82427b87d6, type: 3}
   m_PrefabInstance: {fileID: 5049125826568388623}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &5049125826561438541 stripped
@@ -1053,7 +1245,7 @@ MonoBehaviour:
     SynchronizeType: 2
     Name: Speed
   - Type: 4
-    SynchronizeType: 2
+    SynchronizeType: 1
     Name: Squat
   - Type: 4
     SynchronizeType: 2
@@ -1062,16 +1254,16 @@ MonoBehaviour:
     SynchronizeType: 2
     Name: Attack
   - Type: 9
-    SynchronizeType: 2
+    SynchronizeType: 1
     Name: Jump
   - Type: 9
-    SynchronizeType: 2
+    SynchronizeType: 1
     Name: Damage
   - Type: 3
-    SynchronizeType: 2
+    SynchronizeType: 1
     Name: DamageID
   - Type: 9
-    SynchronizeType: 2
+    SynchronizeType: 1
     Name: Death
   m_SynchronizeLayers:
   - SynchronizeType: 0
@@ -1109,3 +1301,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+--- !u!114 &5336387278114137788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5049125826568488719}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e3208835c9fd34aaf2333ca7269b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swayClamp: 0.09
+  smoothing: 3
