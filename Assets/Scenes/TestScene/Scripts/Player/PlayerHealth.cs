@@ -7,9 +7,11 @@ public class PlayerHealth : MonoBehaviour
 
     [PunRPC]
     public void TakeDamage(int damage){
+        Debug.Log("taking damage");
         health -= damage;
         
         if (health <= 0){
+            Debug.Log("dying");
             Destroy(gameObject);
         }
     }

@@ -11,7 +11,15 @@ public abstract class Interactable : MonoBehaviour
         Interact();
     }
 
+    public void BaseInteract(PanelManager panelManager){
+        Interact(panelManager);
+    }
+
     protected virtual void Interact(){
         // will be overwritten by subclasses
+    }
+
+    protected virtual void Interact(PanelManager panelManager){
+        
     }
 }

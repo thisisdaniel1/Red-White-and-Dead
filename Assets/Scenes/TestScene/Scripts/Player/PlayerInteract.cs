@@ -10,6 +10,8 @@ public class PlayerInteract : MonoBehaviour
     private LayerMask mask;
     private PlayerUI playerUI;
 
+    public PanelManager panelManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +38,7 @@ public class PlayerInteract : MonoBehaviour
                 
                 // if player presses the interact key
                 if (Input.GetKeyDown(KeyCode.E)){
-                    interactable.BaseInteract();
+                    interactable.BaseInteract(panelManager);
                 }
             }
         }

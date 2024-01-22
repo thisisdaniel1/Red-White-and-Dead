@@ -7,6 +7,8 @@ public class Actions : MonoBehaviourPun {
 
 	private Animator animator;
 
+	public Camera cam;
+
 	private CharacterRigController characterRigController;
 
 	const int countOfDamageAnimations = 3;
@@ -18,14 +20,8 @@ public class Actions : MonoBehaviourPun {
 	}
 
 	void Update(){
-		if (Input.GetKeyDown("e")){
-			Aiming();
-		}
-		else if (Input.GetKeyDown("r")){
-			Attack();
-		}
 			
-		else if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d")){
+		if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d")){
 			
 			if (Input.GetKey("left shift")){
 				Run();
@@ -58,6 +54,12 @@ public class Actions : MonoBehaviourPun {
 		if (Input.GetKeyDown("6")){
 			characterRigController.SetArsenal("PPK");
 		}
+		if (Input.GetKeyDown("7")){
+			characterRigController.SetClothing("Shirt");
+		}
+		if (Input.GetKeyDown("8")){
+			characterRigController.SetClothing("Pants");
+		}
 	}
 
 	public void Stay () {
@@ -72,9 +74,26 @@ public class Actions : MonoBehaviourPun {
 		SetRemoteAnimationParameters(false, 1f);
 	}
 
-	public void Attack () {
+	public void Attack (int damage, float range) {
 		Aiming ();
 		animator.SetTrigger ("Attack");
+
+		Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+
+		RaycastHit hit;
+
+		if (Physics.Raycast(ray.origin, ray.direction, out hit, range)){
+
+			Debug.Log("hitting target");
+
+			// if thing that is hit has a health bar/component
+			if (hit.transform.gameObject.GetComponentInParent<PlayerHealth>()){
+				Debug.Log("Target has health and is hitting");
+				 hit.transform.gameObject.GetComponentInParent<PhotonView>().RPC("TakeDamage", RpcTarget.All, damage);
+				//PhotonView temp = hit.transform.gameObject.GetComponentInParent<PhotonView>(); //.RPC("Take Damage", RpcTarget.All, 25);
+				//temp.gameObject.GetComponent<PlayerHealth>().TakeDamage(25);
+			}
+		}
 	}
 
 	public void Death () {

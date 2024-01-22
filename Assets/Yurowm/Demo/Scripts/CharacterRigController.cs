@@ -8,19 +8,41 @@ public class CharacterRigController : MonoBehaviourPun {
 	public Transform rightGunBone;
 	public Transform leftGunBone;
 	public Arsenal[] arsenal;
+	public Clothing[] clothingItems;
 
 	private Animator animator;
 
+	public Actions actions;
+
 	private PhotonView photonView;
+
+	public Arsenal hand;
 
 	void Awake() {
 		animator = GetComponent<Animator> ();
 
 		photonView = GetComponent<PhotonView>();
 		
-		if (arsenal.Length > 0)
+		if (arsenal.Length > 0){
 			SetArsenal (arsenal[0].name);
 		}
+	}
+
+	void Update(){
+		if (Input.GetButton("Fire2")){
+			actions.Aiming();
+		}
+
+		if (hand.nextFire > 0){
+			hand.nextFire -= Time.deltaTime;
+		}
+
+		if (Input.GetButton("Fire1") && hand.nextFire <= 0){
+			hand.nextFire = 1/hand.fireRate;
+
+			actions.Attack(hand.damage, hand.range);
+		}
+	}
 
 	[PunRPC]
     private void ChangeAnimatorController(int controllerIndex)
@@ -51,7 +73,7 @@ public class CharacterRigController : MonoBehaviourPun {
 
 	private void InstantiateWeapon(int weaponIndex)
 	{
-		Arsenal hand = arsenal[weaponIndex];
+		hand = arsenal[weaponIndex];
 
 		// Destroy any weapons if any
 		if (rightGunBone.childCount > 0)
@@ -93,6 +115,23 @@ public class CharacterRigController : MonoBehaviourPun {
 		}
 	}
 
+	void InstantiateClothing(int clothingIndex){
+		Clothing clothing = clothingItems[clothingIndex];
+
+		/*
+		if (clothing.attachBone.childCount > 0){
+			Destroy(clothing.attachBone.GetChild(0).gameObject);
+		}
+		*/
+
+		if (clothing.model != null){
+			GameObject newClothing = Instantiate(clothing.model);
+			newClothing.transform.parent = clothing.attachBone;
+			newClothing.transform.localPosition = clothing.localPosition;
+			newClothing.transform.localRotation = Quaternion.Euler(clothing.localRotation);
+		}
+	}
+
 
 	public void SetArsenal(string name)
 	{
@@ -128,6 +167,16 @@ public class CharacterRigController : MonoBehaviourPun {
 		}
 	}
 
+	public void SetClothing(string name){
+		for (int i = 0; i < clothingItems.Length; i++){
+			Clothing clothing = clothingItems[i];
+			if (clothing.name == name){
+				InstantiateClothing(i);
+				return;
+			}
+		}
+	}
+
 
 	[System.Serializable]
 	public struct Arsenal {
@@ -138,10 +187,23 @@ public class CharacterRigController : MonoBehaviourPun {
 
 		public Vector3 RGLocalPosition;
 		public Vector3 RGLocalRotation;
-		//public Vector3 rightGunLocalScale;
 
 		public Vector3 LGLocalPosition;
 		public Vector3 LGLocalRotation;
-		//public Vector3 leftGunLocalScale;
+
+		public int damage;
+		public int range;
+		public float fireRate;
+
+		public float nextFire;
+	}
+
+	[System.Serializable]
+	public struct Clothing{
+		public string name;
+		public GameObject model;
+		public Transform attachBone;
+		public Vector3 localPosition;
+		public Vector3 localRotation;
 	}
 }

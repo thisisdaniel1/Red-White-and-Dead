@@ -14,7 +14,7 @@ public class TestPanel : PanelInteractable
     [SerializeField]
     private List<ButtonInfo> buttonInfoList;
 
-    protected override void Interact()
+    protected override void Interact(PanelManager panelManager)
     {
         if (panelManager.isPlaying)
         {
