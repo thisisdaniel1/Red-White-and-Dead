@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Unit
+  - unactive
+  - active
+  - attacking
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - Interactable
   - Ground
   - Clickable
-  - 
+  - Enemy
   - 
   - 
   - 

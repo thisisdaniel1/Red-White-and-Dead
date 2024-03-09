@@ -12,7 +12,7 @@ public class SpriteDirectionalController : MonoBehaviour
     void LateUpdate()
     {
         Vector3 camForwardVector = new Vector3(Camera.main.transform.forward.x, 0f, Camera.main.transform.forward.z);
-        //Debug.DrawRay(Camera.main.transform.position, camForwardVector + 5f, Color.magenta);
+        Debug.DrawRay(Camera.main.transform.position, camForwardVector, Color.magenta);
 
         float signedAngle = Vector3.SignedAngle(mainTransform.forward, camForwardVector, Vector3.up);
 
