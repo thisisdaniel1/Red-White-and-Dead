@@ -56,7 +56,6 @@ public class FireZone : MonoBehaviour
 
         shouldShoot = false;
         fireZoneDetection.tag = "unactive";
-        Debug.Log("Stopped Shooting");
     }
 
     void UpdateTarget(){
