@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Billboarding : MonoBehaviour
+public class BillboardingOld : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

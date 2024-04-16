@@ -44,6 +44,8 @@ MonoBehaviour:
   - ChangeAnimatorController
   - SyncHands
   - SwitchWeapon
+  - GiveArmor
+  - GiveHealth
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

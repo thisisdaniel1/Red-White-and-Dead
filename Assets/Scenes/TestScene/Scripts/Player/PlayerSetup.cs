@@ -1,19 +1,27 @@
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerSetup : MonoBehaviour
 {
     public PlayerController playerController;
-
-    public CharacterRigController characterRigController;
-
-    public Actions actions;
-
     public GameObject cam;
+    public GameObject weaponSprite;
+    private PhotonView photonView;
 
-    public void IsLocalPlayer(){
-        playerController.enabled = true;
-        characterRigController.enabled = true;
-        actions.enabled = true;
-        cam.SetActive(true);
+    private void Awake() {
+        photonView = GetComponent<PhotonView>();
+    }
+
+    public void InitializePlayer() {
+        if (photonView.IsMine) {
+            playerController.enabled = true;
+            cam.SetActive(true);
+            weaponSprite.SetActive(true);
+            BillboardManager.Instance.SetLocalPlayer(transform);
+            EnemyManager.Instance.SetLocalPlayer(transform);
+        } else {
+            playerController.enabled = false;
+            cam.SetActive(false);
+        }
     }
 }

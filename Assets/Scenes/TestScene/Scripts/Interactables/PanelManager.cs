@@ -55,7 +55,6 @@ public class PanelManager : MonoBehaviour
         ComputerPanelSetup();
         numPad.SetActive(false);
 
-        playerController = PlayerController.Instance;
         audioManager = AudioManager.Instance;
     }
 

@@ -2,11 +2,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5.5f;  // Movement speed
+    public float moveSpeed = 3.0f;  // Movement speed
     public float sprintSpeed = 8f;
     public float rotationSpeed = 3.0f;  // Camera rotation speed
+    public float momentumDamping = 5.0f;
+
+    Vector3 moveDirection;
+    Vector3 inputVector;
 
     private CharacterController characterController;
+    public Animator cameraAnimator;
 
     private float verticalSpeed = 0.0f;
     private float gravity = -9.81f;
@@ -16,12 +21,7 @@ public class PlayerController : MonoBehaviour
     private bool canRotate;
 
     private bool sprinting;
-
-    public static PlayerController Instance;
-
-    void Awake(){
-        Instance = this;
-    }
+    private bool isWalking;
 
     private void Start()
     {
@@ -31,33 +31,56 @@ public class PlayerController : MonoBehaviour
         canRotate = true;
         FreezeCursor();
 
-        // prevents climbing short things, like the sleeper pods
-        characterController.stepOffset = 0.1f;
+        // prevents climbing short things
+        //characterController.stepOffset = 0.1f;
     }
 
     private void Update()
     {
+        GetInput();
+        MovePlayer();
+        
 
-        sprinting = Input.GetButton("Sprint");
+        cameraAnimator.SetBool("isWalking", isWalking);
+    }
 
-        if(canMove){
-            float horizontalInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
+    void GetInput(){
+        //sprinting = Input.GetButton("Sprint");
 
-            Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput);
-            moveDirection = transform.TransformDirection(moveDirection);
+        // holding down gives -1, 0, 1
+        if (Input.GetKey(KeyCode.W) ||
+            Input.GetKey(KeyCode.A) ||
+            Input.GetKey(KeyCode.S) ||
+            Input.GetKey(KeyCode.D))
+        {
+            if(canMove){
+                float horizontalInput = Input.GetAxis("Horizontal");
+                float verticalInput = Input.GetAxis("Vertical");
 
-            moveDirection *= moveSpeed;
-            if (sprinting){
-                moveDirection *= sprintSpeed;
+                inputVector = new Vector3(horizontalInput, 0, verticalInput);
+                inputVector.Normalize();
+                inputVector = transform.TransformDirection(inputVector);
+
+                isWalking = true;
+                /*
+                if (sprinting){
+                    moveDirection *= sprintSpeed;
+                }
+                */
             }
-
-            // calculate the downward force and apply it to player
-            verticalSpeed += gravity * Time.deltaTime;
-            moveDirection.y = verticalSpeed;
-
-            characterController.Move(moveDirection * Time.deltaTime);
         }
+        else{
+            // if not then lerp whatever inputVector is at to zero
+            inputVector = Vector3.Lerp(inputVector, Vector3.zero, momentumDamping * Time.deltaTime);
+
+            isWalking = false;
+        }
+
+        moveDirection = inputVector * moveSpeed;
+
+        // calculate the downward force and apply it to player
+        verticalSpeed += gravity * Time.deltaTime;
+        moveDirection.y = verticalSpeed;
 
         // reset gravitational force
         if(characterController.isGrounded){
@@ -75,6 +98,10 @@ public class PlayerController : MonoBehaviour
             // Rotate the camera up and down
             cameraTransform.Rotate(Vector3.left * mouseY);
         }
+    }
+
+    void MovePlayer(){
+        characterController.Move(moveDirection * Time.deltaTime);
     }
 
     public void FreezePlayer(){
