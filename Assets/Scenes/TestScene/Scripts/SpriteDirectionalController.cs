@@ -25,8 +25,14 @@ public class SpriteDirectionalController : MonoBehaviour
             animationDirection = new Vector2(0f, -1f);
         }
         else if (angle < sideAngle){
-            // side animation
-            animationDirection = new Vector2(1f, 0f);
+            // this changes the side animation based on what side
+            // the camera is viewing the sprite from
+            if (signedAngle < 0){
+                animationDirection = new Vector2(-1f, 0f);
+            }
+            else{
+                animationDirection = new Vector2(1f, 0f);
+            }
         }
         else{
             // front animation

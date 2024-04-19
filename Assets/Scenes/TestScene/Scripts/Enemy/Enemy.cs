@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     public bool isActive;
     public bool isAggro;
     public Material aggroMat;
-    private Transform target;
+    public Transform target;
     public float awarenessRadius = 4f;
     private NavMeshAgent enemyNavMeshAgent;
 
@@ -56,5 +56,7 @@ public class Enemy : MonoBehaviour
 
     public void SetTarget(Transform newTarget){
         target = newTarget;
+        GetComponentInChildren<EnemySpriteLook>().SetTarget(newTarget);
+        GetComponent<AlignToPlayer>().SetTarget(newTarget);
     }
 }
