@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 76c1a3c7a86e2e3438aa3bb41493648e
+guid: 4ef8587ed9e36de45a64eac37394fb43
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main Small Church
+    second: {fileID: 2100000, guid: de00bf75845b69844bded49ad75f316f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Small Church Floor
+    second: {fileID: 2100000, guid: 578452693a33fa74b814a2e4283e8265, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
