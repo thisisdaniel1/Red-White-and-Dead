@@ -5,12 +5,10 @@ public class PlayerInteract : MonoBehaviour
 
     public Camera cam;
     [SerializeField]
-    private float distance = 3f;
+    private float distance;
     [SerializeField]
     private LayerMask mask;
     private PlayerUI playerUI;
-
-    public PanelManager panelManager;
 
     // Start is called before the first frame update
     void Start()
@@ -36,10 +34,15 @@ public class PlayerInteract : MonoBehaviour
                 // set the text onscreen to the text on the interactable script
                 playerUI.UpdateText(interactable.promptMessage);
                 
+                /*
                 // if player presses the interact key
-                if (Input.GetKeyDown(KeyCode.E)){
-                    interactable.BaseInteract(panelManager);
-                }
+                if (Input.GetKeyDown(KeyCode.Space)){
+
+                    // if quest, then trigger quest from questpoint
+                    if (hitInfo.collider.GetComponent<QuestPoint>() != null){
+                        hitInfo.collider.GetComponent<QuestPoint>().SubmitPressed(InputEventContext.DEFAULT);
+                    }
+                }*/
             }
         }
     }

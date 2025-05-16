@@ -4,9 +4,15 @@ public class SpriteDirectionalController : MonoBehaviour
 {
     public float backAngle = 65f;
     public float sideAngle = 155f;
-    public Transform mainTransform;
-    public Animator animator;
-    public SpriteRenderer spriteRenderer;
+    private Transform parentTransform;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+
+    void Start(){
+        parentTransform = transform.parent;
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     // Camera is updated first
     void LateUpdate()
@@ -14,7 +20,7 @@ public class SpriteDirectionalController : MonoBehaviour
         Vector3 camForwardVector = new Vector3(Camera.main.transform.forward.x, 0f, Camera.main.transform.forward.z);
         Debug.DrawRay(Camera.main.transform.position, camForwardVector, Color.magenta);
 
-        float signedAngle = Vector3.SignedAngle(mainTransform.forward, camForwardVector, Vector3.up);
+        float signedAngle = Vector3.SignedAngle(parentTransform.forward, camForwardVector, Vector3.up);
 
         Vector2 animationDirection = new Vector2(0f, -1f);
 

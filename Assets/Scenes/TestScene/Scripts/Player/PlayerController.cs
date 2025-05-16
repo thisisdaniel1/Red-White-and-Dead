@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     Vector3 moveDirection;
     Vector3 inputVector;
+    private float xRotation = 0f;
 
     private CharacterController characterController;
     public Animator cameraAnimator;
@@ -33,6 +34,16 @@ public class PlayerController : MonoBehaviour
 
         // prevents climbing short things
         //characterController.stepOffset = 0.1f;
+
+        GameEventsManager.instance.playerEvents.onDisablePlayerMovement += FreezePlayer;
+        GameEventsManager.instance.playerEvents.onEnablePlayerMovement += UnFreezePlayer;
+
+        // Set this player as the target for all billboards
+        Billboard[] billboards = FindObjectsOfType<Billboard>();
+        foreach (Billboard b in billboards)
+        {
+            b.SetTarget(cameraTransform); // or use 'transform' if you want the body
+        }
     }
 
     private void Update()
@@ -76,7 +87,15 @@ public class PlayerController : MonoBehaviour
             isWalking = false;
         }
 
-        moveDirection = inputVector * moveSpeed;
+        float adjustedSpeed = moveSpeed;
+
+        // If the player is moving backward (negative Z in local space), halve speed
+        if (Vector3.Dot(transform.forward, inputVector) < 0)
+        {
+            adjustedSpeed *= 0.5f;
+        }
+
+        moveDirection = inputVector * adjustedSpeed;
 
         // calculate the downward force and apply it to player
         verticalSpeed += gravity * Time.deltaTime;
@@ -96,7 +115,10 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(Vector3.up * mouseX);
 
             // Rotate the camera up and down
-            cameraTransform.Rotate(Vector3.left * mouseY);
+            xRotation -= mouseY;
+            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+            cameraTransform.localEulerAngles = new Vector3(xRotation, 0f, 0f);
         }
     }
 

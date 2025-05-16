@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using Photon.Pun;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -26,14 +25,14 @@ public class EnemyAI : MonoBehaviour
     }
 
     void FindLocalPlayer(){
-        PlayerController[] players = FindObjectsOfType<PlayerController>();
-        foreach(PlayerController player in players){
-            Debug.Log("scanning");
-            if(player.GetComponent<PhotonView>().IsMine){
-                playersTransform = player.transform;
-                Debug.Log("found");
-                break;
-            }
-        }
+        //PlayerController[] players = FindObjectsOfType<PlayerController>();
+        //foreach(PlayerController player in players){
+        //    Debug.Log("scanning");
+        //    if(player.GetComponent<PhotonView>().IsMine){
+        //        playersTransform = player.transform;
+        //        Debug.Log("found");
+        //       break;
+        //    }
+        //}
     }
 }

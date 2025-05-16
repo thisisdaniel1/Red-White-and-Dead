@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerArms : MonoBehaviour
 {
+    /*
     public int damage;
 
     [SerializeField]
@@ -29,4 +30,5 @@ public class PlayerArms : MonoBehaviour
     void Fire(){
         Ray ray = new Ray(camera.transform.position, camera.transform.forward);
     }
+    */
 }

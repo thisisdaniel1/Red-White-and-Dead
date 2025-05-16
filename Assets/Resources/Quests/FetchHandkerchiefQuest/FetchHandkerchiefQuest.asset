@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 294185b0eafd7954bb208b6f004d2616, type: 3}
+  m_Name: FetchHandkerchiefQuest
+  m_EditorClassIdentifier: 
+  <id>k__BackingField: FetchHandkerchiefQuest
+  displayName: Fetch the Handkerchief
+  levelRequirement: 1
+  questPrerequisites: []
+  questStepPrefabs:
+  - {fileID: 5083092028424622553, guid: 09de6f86dae8a694a9e2167bc2726906, type: 3}
+  goldReward: 200
+  experienceReward: 1000
