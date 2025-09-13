@@ -8,10 +8,22 @@ public class SpriteDirectionalController : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    void Start(){
+
+    private Transform target;
+
+    void Start()
+    {
         parentTransform = transform.parent;
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        target = PlayerController.Instance.transform;
+    }
+
+    void Update()
+    {
+        Vector3 direction = target.position - transform.position;
+        direction.y = 0;
+        transform.rotation = Quaternion.LookRotation(-direction, Vector3.up);
     }
 
     // Camera is updated first
@@ -26,21 +38,26 @@ public class SpriteDirectionalController : MonoBehaviour
 
         float angle = Mathf.Abs(signedAngle);
 
-        if (angle < backAngle){
+        if (angle < backAngle)
+        {
             // back animation
             animationDirection = new Vector2(0f, -1f);
         }
-        else if (angle < sideAngle){
+        else if (angle < sideAngle)
+        {
             // this changes the side animation based on what side
             // the camera is viewing the sprite from
-            if (signedAngle < 0){
+            if (signedAngle < 0)
+            {
                 animationDirection = new Vector2(-1f, 0f);
             }
-            else{
+            else
+            {
                 animationDirection = new Vector2(1f, 0f);
             }
         }
-        else{
+        else
+        {
             // front animation
             animationDirection = new Vector2(0f, 1f);
         }
